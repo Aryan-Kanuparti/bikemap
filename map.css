@@ -32,3 +32,58 @@ circle {
     stroke-width: 1;
     pointer-events: auto;
 }
+
+.legend-container {
+    width: 100%;
+    display: flex;
+    justify-content: center; /* Center legend horizontally */
+    margin-top: 10px; /* Space between map and legend */
+}
+
+.legend {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 95%; /* Almost full width */
+    max-width: 800px; /* Limit max width for readability */
+    background: rgba(255, 255, 255, 0.9);
+    padding: 8px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.legend > div {
+    flex-grow: 1;
+    padding: 10px 15px;
+    text-align: center;
+    font-size: 14px;
+    color: white;
+    background-color: color-mix(
+        in oklch,
+        var(--color-departures) calc(100% * var(--departure-ratio)),
+        var(--color-arrivals)
+    );
+    border-radius: 5px;
+}
+
+.legend > div:not(:last-child) {
+    margin-right: 2px;
+}
+
+  
+  /* Define the color variables for both circles and legend */
+  #map circle, .legend > div {
+    --color-departures: steelblue;
+    --color-arrivals: darkorange;
+    --color: color-mix(
+      in oklch,
+      var(--color-departures) calc(100% * var(--departure-ratio)),
+      var(--color-arrivals)
+    );
+    fill: var(--color);
+  }
+
+#tooltip {
+    font-size: 14px;
+    pointer-events: none;
+  }

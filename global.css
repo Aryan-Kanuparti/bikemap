@@ -8,3 +8,35 @@ body {
     margin: auto;
     padding: 1em;
   }
+
+  header {
+    display: flex;
+    gap: 1em;
+    align-items: center;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 5px;
+}
+
+header label {
+    margin-left: auto; /* Pushes the slider + time display to the right */
+    font-weight: bold;
+}
+
+#time-slider {
+    flex-grow: 1; /* Makes the slider expand */
+    max-width: 300px; /* Increase length */
+    min-width: 200px;
+    margin-left: 10px; /* Adds some spacing */
+}
+
+#selected-time, #any-time {
+    display: block;
+    min-width: 90px; /* Ensures a stable width */
+    text-align: center;
+}
+
+#any-time {
+    color: gray;
+    font-style: italic;
+}
